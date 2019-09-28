@@ -1,5 +1,2 @@
 DROP DATABASE IF EXISTS movieblogdb;
 CREATE DATABASE movieblogdb;
-
-DROP DATABASE IF EXISTS movieblogdb;
-CREATE DATABASE movieblogdb;
