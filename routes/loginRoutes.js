@@ -8,7 +8,8 @@ module.exports = function (app) {
   // Otherwise the user will be sent an error
   // send it username and password
   app.post('/api/login', passport.authenticate('local'), (req, res) => {
-    res.json(req.user);
+    // res.json(req.user);
+    res.redirect('/mainfeed');
   });
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to

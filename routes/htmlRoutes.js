@@ -18,8 +18,14 @@ module.exports = function (app) {
   });
 
   app.get('/mainfeed', (req, res) => {
-    res.render('mainfeed', {
-      msg: 'Welcome!',
+    db.Review.findAll({
+      where: {},
+      limit: 10,
+      include: [{ model: db.User, required: true }, { model: db.Title, required: true }],
+    }).then((results) => {
+      console.log(results);
+
+      res.render('mainfeed', { reviews: results });
     });
   });
 

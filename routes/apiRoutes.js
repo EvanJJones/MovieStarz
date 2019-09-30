@@ -33,6 +33,7 @@ module.exports = function (app) {
   app.get('/api/review', (req, res) => {
     db.Review.findAll({
       where: {},
+      limit: 10,
       include: [{ model: db.User, required: true }, { model: db.Title, required: true }],
     }).then((results) => {
       res.json(results);
@@ -43,7 +44,6 @@ module.exports = function (app) {
   // send it review_body, rating, userId, titleId
   app.post('/api/new_review', isAuthenticated, (req, res) => {
     db.Review.create(req.body).then((dbPost) => {
-      console.log(req.body);
       res.json(dbPost);
     });
   });
@@ -74,7 +74,6 @@ module.exports = function (app) {
   // send it only name
   app.post('/api/new_title', isAuthenticated, (req, res) => {
     db.Title.create(req.body).then((dbPost) => {
-      console.log(req.body);
       res.json(dbPost);
     });
   });
