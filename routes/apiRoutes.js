@@ -29,6 +29,18 @@ module.exports = function (app) {
     });
   });
 
+  app.get('/api/user/:id', (req, res) => {
+    db.Review.findAll({
+      where: {
+        UserId: req.params.id,
+      },
+      limit: 10,
+      include: [{ model: db.User, required: true }, { model: db.Title, required: true }],
+    }).then((results) => {
+      res.json(results);
+    });
+  });
+
   // get most recent posts, for main feed
   app.get('/api/review', (req, res) => {
     db.Review.findAll({

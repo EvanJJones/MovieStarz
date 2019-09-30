@@ -30,9 +30,15 @@ module.exports = function (app) {
   });
 
   // load a user page
-  app.get('/user/:username', (req, res) => {
-    res.render('user', {
-      msg: 'Welcome!',
+  app.get('/user/:id', (req, res) => {
+    db.Review.findAll({
+      where: {
+        userId: req.params.id,
+      },
+      limit: 10,
+      include: [{ model: db.User, required: true }, { model: db.Title, required: true }],
+    }).then((results) => {
+      res.render('user', { reviews: results });
     });
   });
 

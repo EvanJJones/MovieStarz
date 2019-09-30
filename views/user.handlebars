@@ -1,1 +1,7 @@
 <h1>user page</h1>
+
+<ul>
+  {{#each reviews}}
+    <li>{{this.review_body}}</li>
+  {{/each}}
+</ul>
