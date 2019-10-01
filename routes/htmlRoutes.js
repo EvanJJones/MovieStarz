@@ -18,15 +18,27 @@ module.exports = function (app) {
   });
 
   app.get('/mainfeed', (req, res) => {
-    res.render('mainfeed', {
-      msg: 'Welcome!',
+    db.Review.findAll({
+      where: {},
+      limit: 10,
+      include: [{ model: db.User, required: true }, { model: db.Title, required: true }],
+    }).then((results) => {
+      console.log(results);
+
+      res.render('mainfeed', { reviews: results });
     });
   });
 
   // load a user page
-  app.get('/user/:username', (req, res) => {
-    res.render('user', {
-      msg: 'Welcome!',
+  app.get('/user/:id', (req, res) => {
+    db.Review.findAll({
+      where: {
+        userId: req.params.id,
+      },
+      limit: 10,
+      include: [{ model: db.User, required: true }, { model: db.Title, required: true }],
+    }).then((results) => {
+      res.render('user', { reviews: results });
     });
   });
 

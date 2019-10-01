@@ -1,1 +1,7 @@
 <h1>page that will have the main feed of all reviews</h1>
+
+<ul>
+  {{#each reviews}}
+    <li>{{this.review_body}}</li>
+  {{/each}}
+</ul>
