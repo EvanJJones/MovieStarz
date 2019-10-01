@@ -21,10 +21,9 @@ module.exports = function (app) {
     db.Review.findAll({
       where: {},
       limit: 10,
+      order: [['createdAt', 'DESC']],
       include: [{ model: db.User, required: true }, { model: db.Title, required: true }],
     }).then((results) => {
-      console.log(results);
-
       res.render('mainfeed', { reviews: results });
     });
   });
@@ -36,6 +35,7 @@ module.exports = function (app) {
         userId: req.params.id,
       },
       limit: 10,
+      order: [['createdAt', 'DESC']],
       include: [{ model: db.User, required: true }, { model: db.Title, required: true }],
     }).then((results) => {
       res.render('user', { reviews: results });
