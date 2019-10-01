@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "",
+    "password": "Bentley2019",
     "database": "movieblogdb",
     "host": "localhost",
     "dialect": "mysql"
