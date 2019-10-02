@@ -1,0 +1,23 @@
+h1{
+    background-color:  blue;
+}
+
+body{
+    background-image: url("/images/movie-theater-cinema.jpg");
+    height: 100%;
+}
+
+.form-group{
+    background-color: grey;
+    margin-top: 2em
+}
+
+nav {
+    float: right;
+    padding-top: 5px;
+    
+
+}
+nav a{
+    border-left: 1px solid red;
+}
