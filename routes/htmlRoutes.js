@@ -45,9 +45,13 @@ module.exports = function (app) {
 
   // load the post review page
   app.get('/post', (req, res) => {
-    res.render('post', {
-      msg: 'Welcome!',
-    });
+    if (!req.user) {
+      res.redirect('/login');
+    } else {
+      res.render('post', {
+        msg: 'Welcome!',
+      });
+    }
   });
 
   // Route for logging user out
