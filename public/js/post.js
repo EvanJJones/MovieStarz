@@ -6,7 +6,7 @@ const $postReviewButton = $('#post-review');
 function postReview(reviewObject) {
   $.post('/api/new_review', reviewObject)
     .then((data) => {
-      // window.location.replace('/mainfeed');
+      window.location.replace('/mainfeed');
     })
     .catch((err) => {
       console.log(err);
