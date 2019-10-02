@@ -17,6 +17,7 @@ module.exports = function (app) {
     });
   });
 
+  // main page that has feed of most recent posts
   app.get('/mainfeed', (req, res) => {
     db.Review.findAll({
       where: {},
@@ -44,9 +45,19 @@ module.exports = function (app) {
 
   // load the post review page
   app.get('/post', (req, res) => {
-    res.render('post', {
-      msg: 'Welcome!',
-    });
+    if (!req.user) {
+      res.redirect('/login');
+    } else {
+      res.render('post', {
+        msg: 'Welcome!',
+      });
+    }
+  });
+
+  // Route for logging user out
+  app.get('/logout', (req, res) => {
+    req.logout();
+    res.redirect('/login');
   });
 
   // Render 404 page for any unmatched routes
