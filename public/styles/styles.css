@@ -1,3 +1,5 @@
+/* LOGIN PAGE */
+
 h1{
     background-color:  blue;
  }
@@ -23,7 +25,13 @@ h1{
     color: #999;
     text-decoration: none;
  }
+
+ nav a:first-child {
+   border-left: 0 none;
+ }
+ 
  .login{
     padding-top: 1em;
     float: center;
- }
+}
+
