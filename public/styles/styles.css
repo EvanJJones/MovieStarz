@@ -57,6 +57,8 @@ nav a{
   background-color: #7036368a;
   height: 300px;
   width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 
    /* margin-top: 5em; */
 }
