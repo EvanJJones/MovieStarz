@@ -2,13 +2,20 @@
 
 <head>
   <link href="/styles/styles.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/ba12d81664.js"></script>
 </head>
   {{#each reviews}}
     <ul>
       <li>{{this.review_body}}</li>
       <li>{{this.User.username}}</li>
       <li>{{this.rating}}</li>
+      <li id="stars-{{@index}}"></li>
       <li>{{this.Title.name}}</li>
       <li><img src="{{this.Title.poster}}"></li>
     </ul>
   {{/each}}
+
+    <script src="./js/stars.js" type="text/javascript"></script>
+
+
+
