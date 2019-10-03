@@ -1,6 +1,5 @@
 const $title = $('#title');
 const $reviewBody = $('#review-body');
-
 const $postReviewButton = $('#post-review');
 
 function postReview(reviewObject) {
@@ -18,7 +17,7 @@ function postTitle(titleObject, userIdValue) {
     .then((data) => {
       const reviewObject = {
         review_body: $reviewBody.val().trim(),
-        rating: $("input[name='rating']:checked").attr('id'),
+        rating: parseInt($("input[name='rating']:checked").attr('id')),
         UserId: userIdValue,
         TitleId: data.id,
       };
