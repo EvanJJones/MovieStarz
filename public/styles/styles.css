@@ -1,10 +1,11 @@
 h1{
    color: rgb(5, 4, 4);
-   font-size: 26px;
+   font-size: 38px;
    text-align: center;
-   padding-top: .75em;
-   padding-bottom: .5em;
+   padding-top: .25em;
+   padding-bottom: .25em;
    text-shadow: 2px 2px 5px rgb(235, 233, 229);
+   font-family: 'Cinzel', serif;
 
 }
 body{
@@ -17,7 +18,7 @@ body{
 }
 
 .form-group{
-   background-color: #440126c4;
+   background-color: #35031ff2;
    color: white;
    width: 20em;
    text-indent: .5em;
@@ -28,6 +29,8 @@ body{
    margin-bottom: 1em;
    /*#2c45a4*/
 }
+
+
 nav {
    /* float: right; */
    /* padding-top: 5px; */
@@ -67,7 +70,7 @@ nav a:first-child {
 }
 
 #main-container{
-  background-color: #7036368a;
+  background-color: #8c888880;
   height: 300px;
   width: 700px;
   margin-left: auto;
@@ -82,14 +85,14 @@ body.home{
 
 .btn-info {
    color: black;
-   background:linear-gradient(grey, white);
+   background:linear-gradient(#6b6767, white);
    border-color:black ;
 
 }
 
 button{
    color: black;
-   background:linear-gradient(grey, white);
+   background:linear-gradient(#6b6767, white);
    border-color:black;
    
 }
@@ -129,3 +132,39 @@ label{
    margin-left: 7em;
 
 }
+#bordertop{
+   border-top: white solid 5px;
+}
+
+#login-submit{
+   margin-left: 2em;
+}
+
+#usernamecolor{
+   background-color:#440126e8;
+}
+
+.btn-secondary {
+   color: black;
+   background-color: #868e96;
+   border-color: #868e96;
+}
+.btn-secondary {
+    color: #fff;
+    background-color: #868e96;
+    border-color: #868e96;
+    color: black;
+}
+
+.close {
+   float: right;
+   font-size: 1.5rem;
+   font-weight: 700;
+   line-height: .5;
+   color: black;
+   text-shadow: 0 1px 0 #fff;
+   opacity: 1;
+   background: linear-gradient(#2d0206, #b50707);
+}
+   /* opacity: .5;*/
+
