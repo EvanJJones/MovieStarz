@@ -149,12 +149,6 @@ label{
    background-color: #868e96;
    border-color: #868e96;
 }
-.btn-secondary {
-    color: #fff;
-    background-color: #868e96;
-    border-color: #868e96;
-    color: black;
-}
 
 .close {
    float: right;
@@ -167,4 +161,3 @@ label{
    background: linear-gradient(#2d0206, #b50707);
 }
    /* opacity: .5;*/
-

@@ -1,15 +1,32 @@
 <h1>page that will have the main feed of all reviews</h1>
 
 <head>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; connect-src 'self';font-src 'self'; img-src 'self' data: https:; style-src 'self' ; script-src 'self'">
   <link href="/styles/styles.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/ba12d81664.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet">
 </head>
 <body class="home"></body>
   {{#each reviews}}
-    <ul>
-      <li>{{this.review_body}}</li>
-      <li>{{this.User.username}}</li>
-      <li>{{this.rating}}</li>
-      <li>{{this.Title.name}}</li>
-      <li><img src="{{this.Title.poster}}"></li>
-    </ul>
+<div class ="container">
+  <div class="card mb-5">
+    <div class="card-header">
+  <h4>{{this.User.username}}</h4>
+
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{this.Title.name}}</h5>
+    <h4>{{this.rating}}</h4>
+    <h4 class="blockquote-footer" id="stars-{{@index}}"></h4>
+    <p class="card-text">{{this.review_body}}</p>
+    <p>{{this.createdAt}}</p>
+    <img class="img-thumbnail" src="{{this.Title.poster}}">
+  </div>
+</div>
+</div>
   {{/each}}
+
+    <script src="./js/stars.js" type="text/javascript"></script>
+
+
+
