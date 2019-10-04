@@ -28,6 +28,26 @@ function postTitle(titleObject, userIdValue) {
     });
 }
 
+function checkDB(titleObject, userIdValue) {
+  $.get(`api/title/${titleObject.name}`)
+    .then((data) => {
+      if (data.length === 0) {
+        postTitle(titleObject, userIdValue);
+      } else {
+        const reviewObject = {
+          review_body: $reviewBody.val().trim(),
+          rating: parseInt($("input[name='rating']:checked").attr('id')),
+          UserId: userIdValue,
+          TitleId: data[0].id,
+        };
+        postReview(reviewObject);
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
 function searchMovie(titleObject, userIdValue) {
   const queryURL = `https://www.omdbapi.com/?t=${titleObject.name}&apikey=trilogy`;
 
@@ -45,7 +65,7 @@ function searchMovie(titleObject, userIdValue) {
     };
     console.log(newTitleObject);
 
-    postTitle(newTitleObject, userIdValue);
+    checkDB(newTitleObject, userIdValue);
   });
 }
 

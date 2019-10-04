@@ -89,4 +89,15 @@ module.exports = function (app) {
       res.json(dbPost);
     });
   });
+
+  app.get('/api/title/:name', (req, res) => {
+    db.Title.findAll({
+      where: {
+        name: req.params.name,
+      },
+    }).then((results) => {
+      console.log(results.length);
+      res.json(results);
+    });
+  });
 };
