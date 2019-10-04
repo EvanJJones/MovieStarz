@@ -1,9 +1,10 @@
 h1{
-   color: white;
-   font-size: 18px;
+   color: rgb(5, 4, 4);
+   font-size: 26px;
    text-align: center;
-   padding-top: 1em;
-   padding-bottom: 0em;
+   padding-top: .75em;
+   padding-bottom: .5em;
+   text-shadow: 2px 2px 5px rgb(235, 233, 229);
 
 }
 body{
@@ -12,10 +13,11 @@ body{
    width: 100%;
    background-size: cover;
    background-repeat: repeat;
+   color: black;
 }
 
 .form-group{
-   background-color: #081546;
+   background-color: #440126c4;
    color: white;
    width: 20em;
    text-indent: .5em;
@@ -52,6 +54,11 @@ nav a{
    /* margin-top: 1em; */
    /* padding: 0px 15px; */
 }
+
+nav a:first-child {
+   border-left: 0 none;
+  }
+
 .login{
    margin-left: auto;
    padding-bottom: 1em;
@@ -73,16 +80,52 @@ body.home{
    background-image:url(/images/circle-blues.png);
 }
 
-#signup-submit{
-
-}
-#login-submit{
-  
+.btn-info {
+   color: black;
+   background:linear-gradient(grey, white);
+   border-color:black ;
 
 }
 
 button{
-   color: #fff;
-    background-color: #17a2b8;
-    border-color: #28a745;
+   color: black;
+   background:linear-gradient(grey, white);
+   border-color:black;
+   
+}
+p{
+   text-align:center;
+   
+
+}
+
+label{
+   padding-left: .5em;
+}
+ .radial-dials{
+    padding-left: 1.75em;
+  
+ }
+
+ .form-control {
+   display: block;
+   width: 100%;
+   padding: .375rem .75rem;
+   font-size: 1rem;
+   line-height: 1.5;
+   color: #495057;
+   background-color: #e4e4e4d4;
+   background-clip: padding-box;
+   border: 1px solid #ced4da;
+   border-radius: .25rem;
+   transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.review{
+   border-style: solid;
+   border-top:3em;
+}
+#post-review{
+   margin-left: 7em;
+
 }
