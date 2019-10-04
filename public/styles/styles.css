@@ -18,7 +18,7 @@ body{
 }
 
 .form-group{
-   background-color: #35031ff2;
+   background-color: #35031fc2;
    color: white;
    width: 20em;
    text-indent: .5em;
@@ -141,7 +141,7 @@ label{
 }
 
 #usernamecolor{
-   background-color:#440126e8;
+   background-color:#3a0220f0;
 }
 
 .btn-secondary {
