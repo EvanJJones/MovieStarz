@@ -6,8 +6,9 @@ module.exports = function (app) {
     // If user has account send them one place otherwise redirect to login
     if (req.user) {
       res.redirect('/mainfeed');
+    } else {
+      res.redirect('/login');
     }
-    res.redirect('/login');
   });
 
   // page for logging in

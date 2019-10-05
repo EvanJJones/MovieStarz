@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "",
+    "password": "Oreo1979",
     "database": "movieblogdb",
     "host": "localhost",
     "dialect": "mysql"
