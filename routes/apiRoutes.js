@@ -29,10 +29,11 @@ module.exports = function (app) {
     });
   });
 
-  app.get('/api/user/:id', (req, res) => {
+  // get the 10 most recent posts of a specific user
+  app.get('/api/user/:username', (req, res) => {
     db.Review.findAll({
       where: {
-        UserId: req.params.id,
+        UserId: req.params.username,
       },
       limit: 10,
       include: [{ model: db.User, required: true }, { model: db.Title, required: true }],
@@ -90,13 +91,13 @@ module.exports = function (app) {
     });
   });
 
+  // for checking if an id is already in the database
   app.get('/api/title/:imdbID', (req, res) => {
     db.Title.findAll({
       where: {
         imdbID: req.params.imdbID,
       },
     }).then((results) => {
-      console.log(results.length);
       res.json(results);
     });
   });
