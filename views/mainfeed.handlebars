@@ -9,20 +9,29 @@
 <body class="home"></body>
   {{#each reviews}}
 <div class ="container">
-  <div class="card mb-5">
-    <div class="card-header">
-  <h4>{{this.User.username}}</h4>
+    <div class="card mb-5">
+          <div class="card-header clearfix">
+            <div class="row">
+              <div class="col-3">
+                <h2 class="card-title">{{this.Title.name}}</h2>
+              </div>
+              <div class="col-9 mt-2">
+              <h5 class="float-right">{{this.User.username}}</h5>
+              </div>
+            </div>
+            </div>
+          <div class="row">
+            
+              <div class="card-body">
+                <img id="poster" class="img-thumbnail float-left mr-3 ml-2" src="{{this.Title.poster}}">
+                
+                <p class="card-text">{{this.review_body}}</p>
+                <h4 class="blockquote-footer" id="stars-{{@index}}"></h4>
+                <p id="date">{{this.createdAt}}</p>
 
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">{{this.Title.name}}</h5>
-    <h4>{{this.rating}}</h4>
-    <h4 class="blockquote-footer" id="stars-{{@index}}"></h4>
-    <p class="card-text">{{this.review_body}}</p>
-    <p>{{this.createdAt}}</p>
-    <img class="img-thumbnail" src="{{this.Title.poster}}">
-  </div>
-</div>
+            </div>
+          </div>
+      </div>
 </div>
   {{/each}}
 

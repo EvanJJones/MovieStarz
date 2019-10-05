@@ -124,6 +124,23 @@ label{
    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
+button{
+   color: #fff;
+    background-color: #081546;
+    border-color: #28a745;
+}
+
+#poster{
+   height: 19em;
+   width: auto;
+}
+
+#date{
+   font-size: 0.7em;
+   float: right;
+   margin-top: 20em;
+}
+
 .review{
    border-style: solid;
    border-top:3em;
