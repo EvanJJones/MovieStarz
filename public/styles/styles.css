@@ -183,4 +183,10 @@ button{
    opacity: 1;
    background: linear-gradient(#2d0206, #b50707);
 }
+
+#review{
+   text-align: left;
+   font-weight: 700; 
+
+}
    /* opacity: .5;*/
