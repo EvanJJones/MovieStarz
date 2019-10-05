@@ -1,6 +1,5 @@
-	<head>
-  <link href="/styles/styles.css" rel="stylesheet">
-</head>
+
+
 	<body class="home"></body>
 	<div class="container hidden center">
 		<div class="row top-30">
@@ -10,10 +9,11 @@
 				<form id="cms">
 					<div class="form-group">
 						<label for="title">Title:</label>
-						<input placeholder="Movie Title" type="text" class="form-control" id="title">
+						<input placeholder="Movie Title" type="text" class="form-control" id="title" data-imdbID="">
+            
               <p>Choose a rating:</p>
               <div class= "radial-dials">
-				<label for="contactChoice1">1</label>
+				      <label for="contactChoice1">1</label>
                 <input type="radio" id="1" name="rating">
                 <label for="contactChoice1">2</label>
                 <input type="radio" id="2" name="rating">
@@ -36,4 +36,8 @@
 	</div>
 
   <script src="./js/post.js" type="text/javascript"></script>
+  <script src="./js/autocomplete.js" type="text/javascript"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
   

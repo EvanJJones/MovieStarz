@@ -31,14 +31,15 @@ module.exports = function (app) {
   });
 
   // load a user page
-  app.get('/user/:id', (req, res) => {
+  app.get('/user/:username', (req, res) => {
     db.Review.findAll({
-      where: {
-        userId: req.params.id,
-      },
+      where: {},
       limit: 10,
       order: [['createdAt', 'DESC']],
-      include: [{ model: db.User, required: true }, { model: db.Title, required: true }],
+      include: [
+        { model: db.User, required: true, where: { username: req.params.username } },
+        { model: db.Title, required: true },
+      ],
     }).then((results) => {
       res.render('user', { reviews: results });
     });
@@ -59,6 +60,21 @@ module.exports = function (app) {
   app.get('/logout', (req, res) => {
     req.logout();
     res.redirect('/login');
+  });
+
+  // route for getting all reviews of a specific movie
+  app.get('/title/:imdbID', (req, res) => {
+    db.Review.findAll({
+      where: {},
+      limit: 10,
+      order: [['createdAt', 'DESC']],
+      include: [
+        { model: db.User, required: true },
+        { model: db.Title, required: true, where: { imdbID: req.params.imdbID } },
+      ],
+    }).then((results) => {
+      res.render('user', { reviews: results });
+    });
   });
 
   // Render 404 page for any unmatched routes

@@ -2,8 +2,22 @@
 <head>
   <link href="/styles/styles.css" rel="stylesheet">
 </head>
-<ul>
-  {{#each reviews}}
-    <li>{{this.review_body}}</li>
+{{#each reviews}}
+<div class ="container">
+  <div class="card mb-5">
+    <div class="card-header">
+  <a href="/user/{{this.User.username}}"><h4>{{this.User.username}}</h4></a>
+
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{this.Title.name}}</h5>
+    <h4>{{this.rating}}</h4>
+    <h4 class="blockquote-footer" id="stars-{{@index}}"></h4>
+    <p class="card-text">{{this.review_body}}</p>
+    <p>{{this.createdAt}}</p>
+    <img class="img-thumbnail" src="{{this.Title.poster}}">
+    <a href="/title/{{this.Title.imdbID}}">{{this.Title.name}}</a>
+  </div>
+</div>
+</div>
   {{/each}}
-</ul>

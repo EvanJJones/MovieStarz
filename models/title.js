@@ -2,6 +2,11 @@ module.exports = function (sequelize, DataTypes) {
   const Title = sequelize.define('Title', {
     // Giving the Author model a name of type STRING
     name: DataTypes.STRING,
+    imdbID: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+    },
     poster: DataTypes.STRING,
     year: DataTypes.INTEGER,
   });
