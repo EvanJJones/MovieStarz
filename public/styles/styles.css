@@ -8,6 +8,10 @@ h1{
    font-family: 'Cinzel', serif;
 
 }
+#username{
+   color: white;
+}
+
 body{
    background-image: url(/images/movie-theater-cinema.jpg);
    height: 100%;
@@ -41,6 +45,10 @@ nav {
    box-shadow: inset 0px 0px 1px 1px #efdddd;
    display: flex;
    justify-content: space-evenly;
+}
+
+.title{
+   padding-left: 8em;
 }
 nav a{
    border-left: 1px solid #f7e0e0;
