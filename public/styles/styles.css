@@ -98,12 +98,18 @@ button{
 }
 p{
    text-align:center;
+   font-family: 'Cinzel', serif;
+   
+
    
 
 }
 
 label{
    padding-left: .5em;
+   font-family: 'Cinzel', serif;
+   
+
 }
  .radial-dials{
     padding-left: 1.75em;
