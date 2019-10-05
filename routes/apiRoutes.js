@@ -90,10 +90,10 @@ module.exports = function (app) {
     });
   });
 
-  app.get('/api/title/:name', (req, res) => {
+  app.get('/api/title/:imdbID', (req, res) => {
     db.Title.findAll({
       where: {
-        name: req.params.name,
+        imdbID: req.params.imdbID,
       },
     }).then((results) => {
       console.log(results.length);
