@@ -81,3 +81,17 @@ button{
     background-color: #081546;
     border-color: #28a745;
 }
+
+#poster{
+   height: 19em;
+   width: auto;
+}
+
+#date{
+   font-size: 0.7em;
+   float: right;
+   margin-top: 20em;
+}
+#all-cards{
+   opacity: 0.2;
+}
